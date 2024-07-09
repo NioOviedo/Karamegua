@@ -1,0 +1,7 @@
+CREATE OR REPLACE NONEDITIONABLE TRIGGER trg_before_insert_producto
+BEFORE INSERT ON productos
+FOR EACH ROW
+BEGIN
+  SELECT id_producto.NEXTVAL INTO :new.ID FROM dual;
+END;
+/
